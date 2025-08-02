@@ -1,0 +1,68 @@
+🛠️ Common Industry-Used Ansible Playbooks-
+
+🔧 1. Server Provisioning & Configuration-
+
+•	Install base packages (curl, git, net-tools)
+•	Set hostname, timezone, locale
+•	Configure SSH access and firewall rules
+•	Harden OS (e.g., disable root login, enforce password policies)
+
+🐳 2. Container & Dev Environment Setup-
+
+•	Install Docker or Podman
+•	Setup Docker Compose files
+•	Build and run container images
+•	Configure registry authentication
+
+☁️ 3. Cloud Infrastructure Provisioning-
+
+•	Create VMs on Azure, AWS, GCP (via Ansible modules or Terraform integration)
+•	Configure NICs, storage, and tagging
+•	Bootstrap cloud VMs with roles for apps and monitoring
+
+🔄 4. CI/CD Pipeline Preparation-
+
+•	Install Jenkins, GitLab Runner, or GitHub Actions runner
+•	Configure Groovy pipeline templates
+•	Add required credentials, secrets, or SSH keys
+
+🔐 5. Security Hardening & Patch Management-
+
+•	Apply OS updates (apt/yum/dnf)
+•	Install antivirus agents
+•	Mitigate vulnerabilities (e.g. CVE-specific patching via vars)
+•	Enforce file permissions and auditd rules
+
+📦 6. Software Installation-
+
+•	Automate installation of app stacks (e.g., LAMP/LEMP)
+•	Deploy and configure monitoring agents (Prometheus node exporter, Datadog, etc.)
+•	Install language runtimes (Python, Java, Node.js)
+
+🧩 7. App Deployment & Configuration-
+
+•	Deploy WAR/JAR/Python apps
+•	Update configs via Jinja2 templates
+•	Restart/reload services with notify:
+
+📈 8. Monitoring & Logging Setup-
+
+•	Install and configure Prometheus, Grafana, ELK/EFK
+•	Setup custom exporters
+•	Apply alerting rules and dashboards
+
+🔁 9. Backup & Restore Automation-
+
+•	Schedule backups with cron or systemd timers
+•	Push backups to S3, Azure Blob, or remote servers
+•	Restore tasks using conditional logic
+
+🖥️ 10. VM Imaging & Golden Image Prep-
+
+•	Preinstall software before snapshot
+•	Clean up temp files and SSH keys
+•	Convert VMs to templates (especially in VMware/Azure)
+
+🧠 Bonus Tips
+•	Modularize all of the above using roles (as you already know), grouped via group_vars and host_vars.
+•	Use tags: to run subsets of tasks like patching, monitoring, or app_config.
