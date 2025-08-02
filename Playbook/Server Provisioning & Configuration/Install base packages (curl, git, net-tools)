@@ -156,6 +156,39 @@ yaml
 
 package: automatically chooses the right backend (yum or dnf) based on the system. Clean and flexible.
 
+📦 Refactored Playbook: Using package Module
+
+yaml
+
+# install_base_packages.yml
+
+- name: Install essential base packages
+  hosts: all
+  become: true
+
+  vars:
+    base_packages:
+      - curl
+      - git
+      - net-tools
+
+  tasks:
+    - name: Detect OS family
+      ansible.builtin.set_fact:
+        is_debian: "{{ ansible_os_family == 'Debian' }}"
+        is_redhat: "{{ ansible_os_family == 'RedHat' }}"
+
+    - name: Update package cache (Debian)
+      apt:
+        update_cache: true
+      when: is_debian
+
+    - name: Install packages generically using 'package' module
+      package:
+        name: "{{ base_packages }}"
+        state: present
+      when: is_debian or is_redhat
+
 
 
 
