@@ -63,6 +63,22 @@
 •	Clean up temp files and SSH keys
 •	Convert VMs to templates (especially in VMware/Azure)
 
+🖥️ 10. Shubham Playbook-
+
+•	install_nginx.yml
+•	install_docker.yml
+•	
+•	
+•	
+•	
+•	
+•	
+•	
+•	
+•	
+•	
+•	
+
 🧠 Bonus Tips
 •	Modularize all of the above using roles (as you already know), grouped via group_vars and host_vars.
 •	Use tags: to run subsets of tasks like patching, monitoring, or app_config.
